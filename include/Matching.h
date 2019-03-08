@@ -12,13 +12,16 @@ class Frame;
 
 class Match{
 public:
-    int score;
-    Frame fr1,fr2;
+    int fr1,fr2;
 
+    cv::Mat R;
+    cv::Mat T;
+    vector<DMatch> matches;
 
-    Match(Frame& fr1,Frame& fr2);
+    Match(int fr1, int fr2);
 
 private:
+    int score;
     float siftRatio = 0.85;
     bool removeRepeat = true;
 };
